@@ -41,13 +41,6 @@
     			<groupId>org.springframework.boot</groupId>
     			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
-		<!-- Jakarta Persistence API -->
-		<dependency>
-    			<groupId>jakarta.persistence</groupId>
-    			<artifactId>jakarta.persistence-api</artifactId>
-    			<version>3.1.0</version>
-		</dependency>
 			
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -60,11 +53,18 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<!-- H2 in-memory database (great for local testing) -->
 		<dependency>
-    			<groupId>com.h2database</groupId>
-    			<artifactId>h2</artifactId>
-    			<scope>runtime</scope>
+		<!-- Postgres database -->
+    			<groupId>org.postgresql</groupId>
+    			<artifactId>postgresql</artifactId>
+    			<version>42.6.0</version> <!-- or similar -->
+		</dependency>
+		
+		<!-- Flyway dependency -->
+		<dependency>
+    			<groupId>org.flywaydb</groupId>
+    			<artifactId>flyway-core</artifactId>
+			<version>9.22.3</version> <!-- ✅ Officially supports PostgreSQL 15 -->
 		</dependency>
 	</dependencies>
 

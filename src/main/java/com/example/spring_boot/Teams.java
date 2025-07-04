@@ -4,30 +4,37 @@ import jakarta.persistence.Entity; //this tells Spring this class is a JPA entit
 import jakarta.persistence.Id; //there will be a primary key
 import jakarta.persistence.GeneratedValue; //tells jpa how to generate values for the primary key automatically
 import jakarta.persistence.GenerationType; //this auto increments the primary key
+import jakarta.persistence.Table; //so we can give the table a name
+import jakarta.persistence.Column;
 
 @Entity //entity is creating a table called BaseballPlayer
+@Table(name = "teams")
 //use @table to define the actual name of the table
-public class BaseballPlayer {
+public class Teams {
 
     //use @column to define the actual names of the columns
     @Id //this marks the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //essentially auto incrementing
     private Integer id; //the id itself, integer preferred to int
 
-    private String player_name;
-    private String url;
+    @Column(name = "team")
+    private String team;
+    @Column(name = "wins")
+    private Integer wins;
 
-    private String batting_average;
+    @Column(name = "losses")
+    private Integer losses;
 
-    private String player_summary; //description
+    @Column(name = "win_percentage")
+    private Double winPercentage;
 
-    public BaseballPlayer() {} //default constructor, required by JPA - creates a blank BaseballPlayer object first before we can fill it
+    public Teams() {} //default constructor, required by JPA - creates a blank BaseballPlayer object first before we can fill it
 
-    public BaseballPlayer(String player_name, String url, String batting_average, String player_summary) { //constructor for the actual values
-        this.player_name = player_name;
-        this.url = url;
-        this.batting_average = batting_average;
-        this.player_summary = player_summary;
+    public Teams(String team, Integer wins, Integer losses, Double winPercentage) { //constructor for the actual values
+        this.team = team;
+        this.wins = wins;
+        this.losses = losses;
+        this.winPercentage = winPercentage;
     }
 
     //get the values. this is necessary to access the values
@@ -35,20 +42,20 @@ public class BaseballPlayer {
         return id;
     }
 
-    public String getPlayer_name() {
-        return player_name;
+    public String getTeam() {
+        return team;
     }
 
-    public String getUrl() {
-        return url;
+    public Integer getWins() {
+        return wins;
     }
 
-    public String getBatting_average() {
-        return batting_average;
+    public Integer getLosses() {
+        return losses;
     }
 
-    public String getPlayer_summary() {
-        return player_summary;
+    public Double getWinPercentage() {
+        return winPercentage;
     }
 
     //set the values. this is necessary to modify values
@@ -56,20 +63,20 @@ public class BaseballPlayer {
         this.id = id;
     }
 
-    public void setPlayer_name(String player_name) {
-        this.player_name = player_name;
+    public void setTeam(String team) {
+        this.team = team;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setWins(Integer wins) {
+        this.wins = wins;
     }
 
-    public void setBatting_average(String batting_average) {
-        this.batting_average = batting_average;
+    public void setLosses(Integer losses) {
+        this.losses = losses;
     }
 
-    public void setSummary(String player_summary) {
-        this.player_summary = player_summary;
+    public void setWinPercentage(Double winPercentage) {
+        this.winPercentage = winPercentage;
     }
 }
 
