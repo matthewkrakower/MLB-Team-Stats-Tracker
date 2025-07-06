@@ -26,11 +26,11 @@ public class Teams {
     private Integer losses;
 
     @Column(name = "win_percentage")
-    private Double winPercentage;
+    private String winPercentage;
 
     public Teams() {} //default constructor, required by JPA - creates a blank BaseballPlayer object first before we can fill it
 
-    public Teams(String team, Integer wins, Integer losses, Double winPercentage) { //constructor for the actual values
+    public Teams(String team, Integer wins, Integer losses, String winPercentage) { //constructor for the actual values
         this.team = team;
         this.wins = wins;
         this.losses = losses;
@@ -54,7 +54,7 @@ public class Teams {
         return losses;
     }
 
-    public Double getWinPercentage() {
+    public String getWinPercentage() {
         return winPercentage;
     }
 
@@ -75,7 +75,7 @@ public class Teams {
         this.losses = losses;
     }
 
-    public void setWinPercentage(Double winPercentage) {
+    public void setWinPercentage(String winPercentage) {
         this.winPercentage = winPercentage;
     }
 }

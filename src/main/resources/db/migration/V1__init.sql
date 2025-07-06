@@ -3,5 +3,5 @@ CREATE TABLE IF NOT EXISTS teams (
     team VARCHAR(255),
     wins INTEGER,
     losses INTEGER,
-    win_percentage DOUBLE PRECISION
+    win_percentage VARCHAR(255)
 );
