@@ -8,4 +8,8 @@ import java.util.Optional;
 public interface TeamsRepo extends JpaRepository<Teams, Integer> {
     // no code needed, CRUD methods are free
     Optional<Teams> findByTeam(String team); //used when we get from stats api
+    //gives a custom, readable, auto-generated SQL query method that
+    // simplifies and safely checks for a team’s existence—essential for clean API-to-database syncing
+    //SELECT * FROM teams WHERE team = ?;
+    //essentially findByX looks for X in the Teams table. if its there, then update, else create.
 }
