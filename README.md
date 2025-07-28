@@ -9,7 +9,7 @@ Features
 - Flyway Migrations: Automatically creates and updates the teams table on app startup
 - JPA Repository: Simplified interaction with the database using TeamsRepo
 - PostgreSQL Support: Stores team names, win/loss records, and win percentage
-- Docker: creates database "baseball"
+- Docker Compose: creates database "baseball"
 
 <img width="674" height="681" alt="Image" src="https://github.com/user-attachments/assets/7030cbf5-23a8-47e7-bf58-1cbe25a2a84b" />
 
