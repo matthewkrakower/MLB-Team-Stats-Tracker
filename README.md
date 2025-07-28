@@ -9,6 +9,7 @@ Features
 - Flyway Migrations: Automatically creates and updates the teams table on app startup
 - JPA Repository: Simplified interaction with the database using TeamsRepo
 - PostgreSQL Support: Stores team names, win/loss records, and win percentage
+- Docker: creates database "baseball"
 
 <img width="674" height="681" alt="Image" src="https://github.com/user-attachments/assets/7030cbf5-23a8-47e7-bf58-1cbe25a2a84b" />
 
@@ -20,9 +21,10 @@ Tech Stack
 - Flyway
 - JSON (org.json)
 - JPA/Hibernate
+- Docker
 
 How It Works
-- Database Setup: teams table is automatically created using Flyway migrations.
+- Database Setup: baseball database created by running "docker-compose up -d", teams table is automatically created using Flyway migrations.
 - API Request: Send a POST request to /mq/send with "update" or a game ID to trigger an update.
 - Message Queue: ActiveMQ listens for the message and routes it to a consumer.
 - Data Fetch: The consumer calls the MLB Stats API and updates the database with current standings.
