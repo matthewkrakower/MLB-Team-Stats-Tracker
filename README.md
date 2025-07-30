@@ -40,4 +40,5 @@ Getting Started
 - Clone the repo: git clone https://github.com/matthewkrakower/summerproject.git
 - Set up PostgreSQL and create a baseball database.
 - Configure application.properties with your database credentials and ActiveMQ broker.
+- Run the docker-compose file: docker-compose up -d
 - Run the app: ./mvnw spring-boot:run
