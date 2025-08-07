@@ -16,7 +16,7 @@ public class GameStatsConsumer {
     private TeamStatsService teamStatsService; //custom service class to get what we need from stats API
 
     @JmsListener(destination = "gameStatsQueue") //we trigger the following method when there is a message in
-    // "game.stats.queue"
+    // "gameStatsQueue"
     public void receiveMessage(String message) {
         System.out.println("Received message: " + message); //print the message for debugging
         // message could be a game ID or just "update"
