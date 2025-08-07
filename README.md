@@ -30,15 +30,12 @@ How It Works
 - Data Fetch: The consumer calls the MLB Stats API and updates the database with current standings.
 - Data Access: Use GET /teams to view the latest team data.
 
-Example
-- POST http://localhost:8080/mq/send
-- Body: "update"
-
-This triggers a fetch from the MLB API and stores the latest win/loss records in the database.
-
 Getting Started
-- Clone the repo: git clone https://github.com/matthewkrakower/summerproject.git
+- Clone the repo: git clone https://github.com/matthewkrakower/MLB-Team-Stats-Tracker
 - Set up PostgreSQL and create a baseball database.
 - Configure application.properties with your database credentials and ActiveMQ broker.
 - Run the docker-compose file: docker-compose up -d
 - Run the app: ./mvnw spring-boot:run
+- Send a message in Postman: POST http://localhost:8080/mq/send --> Body: "update" (triggers a fetch from the MLB API and stores the latest win/loss records in the database)
+- Open database in terminal: PGPASSWORD=insert_baseball_password psql -h localhost -U postgres -d baseball
+- Query from teams table
